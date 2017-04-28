@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!--load custom css style-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="row">
+                <form method="POST" action="addNew">
+                    <div class="form-group">
+                        <label for="name">Task Name</label>
+                        <input type="text" class="form-control" name="item_name">
+                    </div>
+                    <input class="btn btn-default" type="submit">
+                </form>
+            </div>
+            <br/>
+            <div class="row">
+                <ul data-bind="foreach: toList" class="list-group">
+                    <li class="list-group-item">
+                        ID: <span data-bind="text: id"></span>
+                        Task Name: <span data-bind="text: name"></span>
+                        Task Status: <span data-bind="text: status"></span>
+                        <button class="btn btn-default" data-bind="click: done">Mark As Done</button>
+                        <button class="btn btn-default" data-bind="click: undone">Mark As UnDone</button>
+                        <button class="btn btn-default" data-bind="click: taskdel">Delete</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+
+
+
+    <!--Load Jquery via CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--Load BootStrap javascript via CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!--custom Javascript-->
+    <script src="/script/script.js"></script>
+    <!--Load BootStrap css via CDN-->
+</body>
+
+</html>
